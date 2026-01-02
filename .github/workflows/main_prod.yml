@@ -16,9 +16,9 @@ jobs:
 
     # Static/env values that aren't secrets
     env:
-      DOCKER_REGISTRY: e2ecrdev.azurecr.io
+      DOCKER_REGISTRY: contosodfdsub2.azurecr.io
       IMAGE_NAME: yoni_newcli_eus2_new_github_image
-      IMAGE_TARGET: e2ecrdev.azurecr.io/red/yoni_newcli_eus2_new_github_image
+      IMAGE_TARGET: contosodfdsub2.azurecr.io/red/yoni_newcli_eus2_new_github_image
       DfdBackendServiceEnvironmentt: PPE
       GDN_NUGET_SOURCE_FEED_OVERRIDE: https://pkgs.dev.azure.com/msdoustest/msdo/_packaging/msdotestfeed2/nuget/v3/index.json
       GITHUB_REPOSITORY_OWNER_ID: ""
