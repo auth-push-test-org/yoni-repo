@@ -1,4 +1,4 @@
-name: Build, Push, and Scan
+name: Build, Push, and Scan Prod
 
 on:
   push:
