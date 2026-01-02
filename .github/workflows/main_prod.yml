@@ -61,9 +61,9 @@ jobs:
       - name: Scan image with Defender CLI
         env:
           # Defender CLI auth/tenant values from Secrets
-          GDN_MDC_CLI_CLIENT_ID: ${{ secrets.GDN_MDC_CLI_CLIENT_ID }}
-          GDN_MDC_CLI_TENANT_ID: ${{ secrets.GDN_MDC_CLI_TENANT_ID }}
-          GDN_MDC_CLI_CLIENT_SECRET: ${{ secrets.GDN_MDC_CLI_CLIENT_SECRET }}
+          DEFENDER_CLIENT_ID: ${{ secrets.GDN_MDC_CLI_CLIENT_ID }}
+          DEFENDER_TENANT_ID: ${{ secrets.GDN_MDC_CLI_TENANT_ID }}
+          DEFENDER_CLIENT_SECRET: ${{ secrets.GDN_MDC_CLI_CLIENT_SECRET }}
         run: |
           echo "Ensuring ACR login is valid for scan pull..."
           docker login "${DOCKER_REGISTRY}" \
