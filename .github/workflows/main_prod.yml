@@ -19,8 +19,6 @@ jobs:
       DOCKER_REGISTRY: contosodfdsub2.azurecr.io
       IMAGE_NAME: yoni_newcli_eus2_new_github_image
       IMAGE_TARGET: contosodfdsub2.azurecr.io/red/yoni_newcli_eus2_new_github_image
-      DfdBackendServiceEnvironmentt: PPE
-      GDN_NUGET_SOURCE_FEED_OVERRIDE: https://pkgs.dev.azure.com/msdoustest/msdo/_packaging/msdotestfeed2/nuget/v3/index.json
       GITHUB_REPOSITORY_OWNER_ID: ""
       GITHUB_REPOSITORY_ID: ""
 
@@ -66,6 +64,9 @@ jobs:
           GDN_MDC_CLI_TENANT_ID: ${{ secrets.GDN_MDC_CLI_TENANT_ID }}
         run: |
           echo "Ensuring ACR login is valid for scan pull..."
+           export GDN_MDC_CLI_CLIENT_ID=${{secrets.GDN_MDC_CLI_CLIENT_ID}}
+          export GDN_MDC_CLI_CLIENT_SECRET=${{secrets.GDN_MDC_CLI_CLIENT_SECRET}}
+          export GDN_MDC_CLI_TENANT_ID=${{secrets.GDN_MDC_CLI_TENANT_ID}}
           docker login "${DOCKER_REGISTRY}" \
             --username "${{ secrets.DOCKER_USERNAME }}" \
             --password "${{ secrets.DOCKER_PASSWORD }}"
